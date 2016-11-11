@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>面向对象法小人动画</title>
+    <style>
+        div:nth-child(1){
+            width: 600px;
+            height: 600px;
+            margin: 0 auto;
+        }
+
+        div:nth-child(2){
+            text-align: center;
+            margin: 30px auto;
+        }
+    </style>
+</head>
+<body>
+<div><canvas width="600" height="600" style="border: 2px solid rgb(204, 204, 204);"> </canvas></div>
+<div>
+    <button id="front" type="">前进</button>
+    <button id="left" type="">左转</button>
+    <button id="right" type="">右转</button>
+    <button id="back" type="">后转</button>
+</div>
+<script>
+
+    //封装的函数
+    function drawImg(option){
+
+        this.init(option);
+    }
+    drawImg.prototype = {
+        init:function(option){
+            // console.log('ddd')
+            //确定小人的宽高
+            this.width = option.width;
+            this.height = option.height;
+            //确定在画布上的坐标
+            this.x = option.x;
+            this.y = option.y;
+            //在画布上的宽高
+            this.incw = option.incw;
+            this.inch = option.inch;
+            //小人运动的速度
+            this.speed = option.speed;
+            //图片路径
+            this.src = option.src;
+            //运动的方向
+            this.direction = option.direction;
+        },
+        rander:function(ctx){
+//            console.log('rander');
+            var img = new Image();
+            img.src = this.src;
+            var i = 0;
+            var that = this;
+            img.onload = function(){
+                setInterval(function(){
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ctx.beginPath();
+                    ctx.drawImage(
+                            img,
+                            that.width*i,
+                            that.height*that.direction,
+                            that.width,
+                            that.height,
+                            that.x,
+                            that.y,
+                            that.incw,
+                            that.inch
+                    );
+                    ctx.closePath();
+                    i++;
+                    i = i%4;
+                }, 1000/that.speed);
+            }
+        },
+
+        setDirection: function(direction){
+            switch (direction) {
+                case 'left':
+                    this.direction = 1;
+                    break;
+                case 'right':
+                    this.direction = 2;
+                    break;
+                case 'front':
+                    this.direction = 0;
+                    break;
+                case 'back':
+                    this.direction = 3;
+                    break;
+                default:
+                    this.direction = 0;
+                    break;
+            }
+        }
+    };
+
+
+    //函数的调用
+    var canvas = document.querySelector('canvas');
+        canvas.width = 600;
+        canvas.height = 600;
+    var ctx = canvas.getContext('2d');
+    var option = {
+        width: 40,
+        height: 65,
+        x: canvas.width/2,
+        y: canvas.height/2,
+        incw: 40,
+        inch: 65,
+        speed: 10,
+        src: '../img/NPC1.png',
+        direction: 0
+    };
+
+    var drawimg = new drawImg(option);
+    drawimg.rander(ctx);
+
+    console.log(drawimg.__proto__);    // Object { init=function(),  rander=function(),  setDirection=function()}
+
+    var left = document.querySelector('#left');
+    left.addEventListener('click', function(){
+        drawimg.setDirection('left');
+    });
+    var right = document.querySelector('#right');
+    right.addEventListener('click', function(){
+        drawimg.setDirection('right');
+    });
+    var front = document.querySelector('#front');
+    front.addEventListener('click', function(){
+        drawimg.setDirection('front');
+    });
+    var back = document.querySelector('#back');
+    back.addEventListener('click', function(){
+        drawimg.setDirection('back');
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+     this.width = option.width;
+     this.height = option.height;
+     //确定在画布上的坐标
+     this.x = option.x;
+     this.y = option.y;
+     //在画布上的宽高
+     this.incw = option.incw;
+     this.inch = option.inch;
+     //小人运动的速度
+     this.speed = option.speed;
+     //图片路径
+     this.src = option.src;
+     //运动的方向
+     this.direction = option.direction;
+*/
+
+
+</script>
+</body>
+</html>
