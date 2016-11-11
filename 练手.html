@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>金融链</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="clear0.css">
+    <!--<link rel="stylesheet" type="text/css" href="css1.css" media="screen and (max-width:960px) and (min-width: 500px)">-->
+    <style>
+
+        * {
+            margin: 0; padding: 0;
+        }
+
+        /*做rem的根元素匹配*/
+        html {
+            font-size: 62.5%; /* 10÷16=62.5% */
+        }
+        @media only screen and (min-width: 481px){
+            html {
+                font-size: 94%!important; /* 15.04÷16=94% */
+            }
+        }
+        @media only screen and (min-width: 561px){
+            html {
+                font-size: 109%!important; /* 17.44÷16=109% */
+            }
+        }
+        @media only screen and (min-width: 641px){
+            html {
+                font-size: 125%!important; /* 20÷16=125% */
+            }
+        }
+
+        section{
+            min-width: 300px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .head {
+            margin: 0 auto;
+            width: 100%;
+            height: 4rem;
+            background: #0894ec;
+        }
+
+        .logo{
+            width: 20%;
+            height: 3.6rem;
+        }
+
+        .head input[type='text']{
+            width: 45%;
+            height: 3rem;
+            font-size: 1.4rem;
+            border-radius: 6px;
+            vertical-align: 1.3rem;
+        }
+
+        .head input[type='button']{
+            width: 15%;
+            height: 3.5rem;
+            font-size: 1.4rem;
+            color: #fefffd;
+            border: none;
+            border-radius: 6px;
+            background-color: #e88c0d;
+            vertical-align: 1.2rem;
+        }
+
+        .head span{
+            font-size: 1.4rem;
+            vertical-align: 1.2rem;
+            margin-left: 1rem;
+        }
+
+        .title{
+            line-height: 3rem;
+            font-size: 1.4rem;
+            /*margin-left: 14px;*/
+            border-bottom: 2px solid #000;
+        }
+
+        .r-boss{
+            width: 100%;
+        }
+
+        .r-box{
+            width: 30%;
+            float: left;
+            /*background-color: red;*/
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .r-box img{
+            width: 5rem;
+            height: 5rem;
+            /*background-color: #69becd;*/
+        }
+
+
+/*
+        .money1{
+
+        }
+
+        .money2{
+
+        }
+
+        .money3{
+
+        }
+
+        .money4{
+
+        }
+
+        .money5{
+
+        }
+
+        .money6{
+
+        }
+*/
+
+        .hr{
+            padding-top: 40px;
+            padding-bottom: 4rem;
+            width: 100%;
+            /*background-color: #f0eff5;*/
+        }
+
+        .hr-img{
+            width: 100%;
+        }
+
+        .search{
+            width: 43%;
+            line-height: 4rem;
+            font-size: 2rem;
+            background-color: #0894ec;
+            float: left;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .search-box{
+            width: 100%;
+            margin: 0 auto;
+            height: 6rem;
+        }
+
+        .more{
+            font-size: 1rem;
+        }
+
+        .bottom{
+            width: 95%;
+            margin: 0 auto;
+            height: 6rem;
+        }
+
+        .bottom-t1{
+            font-size: 1rem;
+            line-height: 2;
+        }
+
+        .bottom-f{
+            float: right;
+        }
+        .bottom-d{
+            background-color: #fe0000;
+            text-align: center;
+            display: inline-block;
+            width: 2rem;
+        }
+
+        .bottom-j{
+            background-color: #0000fe;
+            text-align: center;
+            width: 2rem;
+            display: inline-block;
+        }
+
+        .dis{
+            display: inline-block;
+        }
+
+        .dis-box{
+            width: 100%;
+        }
+
+        .dis-box0{
+            margin-top: 1rem;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<header class="head">
+    <section class="f-clear ">
+
+        <a href="###"><img class="logo" src="img/jrl-logo.png" alt=""></a>
+        <input type="text">
+        <input type="button" value="发需求">
+        <span>我的</span>
+    </section>
+</header>
+ <section class="f-clear">
+     <div class="title"><span>抢单中心</span></div>
+     <ul class="r-boss">
+         <li class="r-box"><img src="img/money1.png" alt=""></li>
+         <li class="r-box"><img src="img/money2.png" alt=""></li>
+         <li class="r-box"><img src="img/money3.png" alt=""></li>
+         <li class="r-box"><img src="img/money4.png" alt=""></li>
+         <li class="r-box"><img src="img/money5.png" alt=""></li>
+         <li class="r-box"><img src="img/money6.png" alt=""></li>
+     </ul>
+
+     <div class="hr"><img class="hr-img" src="img/hr.png" alt=""></div>
+
+     <div class="search-box f-clear">
+         <p class="search">找顾问</p>
+         <p class="search">找顾问</p>
+     </div>
+     <div class="title"><span>推荐业务</span><span class="bottom-f more">更多>></span></div>
+<div class="bottom">
+    <div class="dis-box0 f-clear">
+        <p class="bottom-t1 dis">有150万亩地，贷款约100万</p>
+        <span class="bottom-f"><span class="bottom-t1 bottom-d">顶</span><span class="bottom-t1 bottom-j">荐</span></span>
+    </div>
+
+    <div class="dis-box f-clear">
+        <p class="bottom-t1 dis">联系人 185123456789</p>
+        <span class="bottom-t1 bottom-f">2016/06/08</span>
+    </div>
+
+</div>
+
+</section>
+
+</body>
+</html>
